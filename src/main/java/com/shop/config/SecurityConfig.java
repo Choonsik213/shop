@@ -19,7 +19,7 @@ public class SecurityConfig {
         http
                 .authorizeHttpRequests(authorize -> authorize
                         .requestMatchers("/css/**", "/js/**", "/img/**").permitAll()
-                        .requestMatchers("/", "/members/**", "/item/**", "/images/**").permitAll()
+                        .requestMatchers("/**", "/members/**", "/item/**", "/images/**").permitAll()
                         .requestMatchers("/admin/**").hasRole("ADMIN")
                         .anyRequest().authenticated()
                 ) // 로그인 하지 않아도 접속 가능한 경로
