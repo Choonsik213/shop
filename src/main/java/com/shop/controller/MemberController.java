@@ -24,7 +24,7 @@ public class MemberController {
     }
 
     @PostMapping(value = "/new")
-    public String memberForm(Model model) {
+    public String memberForm2(Model model) {
         model.addAttribute("memberFormDto", new MemberFormDto());
         return "member/memberForm";
     }
