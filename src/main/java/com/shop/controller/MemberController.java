@@ -1,6 +1,7 @@
 package com.shop.controller;
 
 import com.shop.dto.MemberFormDto;
+import com.shop.entity.Member;
 import com.shop.service.MemberService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -24,8 +25,12 @@ public class MemberController {
     }
 
     @PostMapping(value = "/new")
-    public String memberForm2(Model model) {
-        model.addAttribute("memberFormDto", new MemberFormDto());
-        return "member/memberForm";
+    public String memberForm(MemberFormDto memberFormDto) {
+
+        Member member = Member.createMember(memberFormDto, passwordEncoder);
+        memberService.saveMember(member);
+
+        return "redirect:/";
+
     }
 }
