@@ -17,7 +17,7 @@
 
     <script th:inline="javascript">
         $(document).ready(function(){
-            var errorMessage = [[${errorMessage}]];
+            var errorMessage =  /*[[${errorMessage}]]*/ 'error';
             if(errorMessage != null){
                 alert(errorMessage);
             }
@@ -52,7 +52,7 @@
         <div style="text-align: center">
             <button type="submit" class="btn btn-primary" style="">Submit</button>
         </div>
-        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">
+<!--        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}">-->
     </form>
 
 </div>

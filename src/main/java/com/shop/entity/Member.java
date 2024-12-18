@@ -1,11 +1,12 @@
 package com.shop.entity;
 
 import com.shop.constant.Role;
-import com.shop.controller.MeberFormDto;
 import com.shop.dto.MemberFormDto;
+import com.shop.repository.MemberRepository;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 import jakarta.persistence.*;
@@ -41,9 +42,8 @@ public class Member {
         member.setAddress(memberFormDto.getAddress());
         String password = passwordEncoder.encode(memberFormDto.getPassword());
         member.setPassword(password);
-        member.setRole(Role.ADMIN);
+        member.setRole(Role.USER);
         return member;
     }
-
 
 }

@@ -8,12 +8,22 @@ import lombok.ToString;
 
 import java.time.LocalDateTime;
 
+import java.util.List;
+
 @Entity
 @Table(name="item") //어떤 테이블과 매핑될지 지정
 @Getter
 @Setter
 @ToString
 public class Item {
+
+    @ManyToMany
+    @JoinTable(
+            name = "member_item",
+            joinColumns = @JoinColumn(name = "member_id"),
+            inverseJoinColumns = @JoinColumn(name = "item_id")
+    )
+    private List<Member> member;
 
     @Id // 기본키 되는 멤버변수
     @Column(name="item_id") // 테이블에 매핑될 컬럼 이름설정
@@ -39,5 +49,6 @@ public class Item {
     private LocalDateTime regTime;  // 등록시간
 
     private LocalDateTime updateTime;   // 수정시간
+
 
 }
