@@ -11,6 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 public class OrderItem {
+
     @Id
     @GeneratedValue
     @Column(name="order_item_id")
@@ -28,7 +29,4 @@ public class OrderItem {
 
     private int count;
 
-    private LocalDateTime regTime;
-
-    private LocalDateTime updateTime;
 }
