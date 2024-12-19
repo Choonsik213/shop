@@ -47,7 +47,7 @@ dependencies {
 
 
     // Thymeleaf Layout Dialect 의존성 추가
-    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:2.5.1'
+    implementation 'nz.net.ultraq.thymeleaf:thymeleaf-layout-dialect:3.3.0'
 }
 
 tasks.named('test') {
