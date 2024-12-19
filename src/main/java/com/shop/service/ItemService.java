@@ -3,11 +3,14 @@ package com.shop.service;
 import com.shop.dto.ItemDto;
 import com.shop.dto.ItemFormDto;
 import com.shop.dto.ItemImgDto;
+import com.shop.dto.ItemSearchDto;
 import com.shop.entity.Item;
 import com.shop.entity.ItemImg;
 import com.shop.repository.ItemImgRepository;
 import com.shop.repository.ItemRepository;
 import jakarta.persistence.EntityNotFoundException;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.transaction.annotation.Transactional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -75,5 +78,9 @@ public class ItemService {
             itemImgService.updateItemImg(itemImgIds.get(i), itemImgFileList.get(i));
         }
         return item.getId();
+    }
+
+    public Page<Item> getAdminItemPage(ItemSearchDto itemSearchDto, Pageable pageable) {
+        return null;
     }
 }
