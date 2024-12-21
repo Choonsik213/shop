@@ -5,7 +5,7 @@ import com.shop.dto.MainItemDto;
 import com.shop.entity.Item;
 import org.springframework.data.domain.Page;
 
-import java.awt.print.Pageable;
+import org.springframework.data.domain.Pageable;
 
 public interface ItemRepositoryCustom {
 

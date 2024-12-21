@@ -32,16 +32,19 @@ public class ItemFormDto {
     private Integer stockNumber;
 
     private ItemSellStatus itemSellStatus;
+
     private List<ItemImgDto> itemImgDtoList = new ArrayList<>();
+
     private List<Long> itemImgIds = new ArrayList<>();
+
     private static ModelMapper modelMapper = new ModelMapper();
 
-    public Item createItem() {
+    public Item createItem(){
         return modelMapper.map(this, Item.class);
     }
 
-    public static ItemFormDto of(Item item) {
-        return modelMapper.map(item, ItemFormDto.class);
+    public static ItemFormDto of(Item item){
+        return modelMapper.map(item,ItemFormDto.class);
     }
 
 
